@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Proyecto con Bootstrap</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Importar Font Awesome -->
@@ -44,7 +44,7 @@
     /* Estilo del icono de flecha */
     .scroll-down-icon {
       position: absolute;
-      bottom: 50px;
+      bottom: 5rem;
       left: 50%;
       transform: translateX(-50%);
       font-size: 40px; /* Tamaño grande */
@@ -122,7 +122,7 @@
   .icon {
   position: absolute;
   opacity: 0.1; /* Opacidad del icono */
-  width: 100px;
+  width: 50px;
   animation: floatIcon 5s infinite alternate linear; /* Animación para hacer que flote */
 }
 
@@ -196,11 +196,62 @@
   }
 }
 
+.icon-mesa{
+  width: 8rem;
+}
+
+.icon-ubicacion {
+  width: 8rem; 
+  height: 7.7rem;
+}
+
+.size-font {
+  font-size: 1.7rem;
+}
+
+.size-font2 {
+  font-size: 1.2rem;
+}
+
+.font-size3 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@media (max-width: 650px) {
+.icon-mesa{
+  width: 5rem;
+}
+
+.icon-ubicacion {
+  width: 5rem; 
+  height: 4.7rem;
+}
+
+.size-font {
+  font-size: 1.5rem;
+}
+
+.size-font2 {
+  font-size: 1rem;
+}
+
+.font-size-3 {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.countdown-item {
+    width: 6rem;
+}
+
+}
+
   </style>
 </head>
-<body>
+<body style="overflow-x: hidden;">
 
-<div class="container-fluid">
+<div class="container-fluid" style="overflow-x: hidden;">
   <div class="row">
     <div class="col-12 col-md-6">
       <div class="custom-div red-div">
@@ -213,61 +264,58 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-6 div-inv" style="background-color: #fcd7da;" id="iconContainer">
-      <div class="custom-div" id="blue-div">
-
-
+    <div class="col-12 col-md-6 div-inv" style="background-color: #fcd7da;" >
+      <div style="position: absolute; background-color: transparent; width: 100%; height: 100%; z-index: 0;" id="icons"></div>
+      <div class="custom-div" id="blue-div" style="z-index: 2;">
         <img src="logo.png" width="50%" class="mt-4">
 
-        <p class="mb-0 pb-0" style=" font-size: 1.7rem">Sabado, 29 de junio, 2024.</p>
-        <p class="mt-0" style=" font-size: 1.7rem">02:30 p.m.</p>
+        <p class="mb-0 pb-0 size-font" style=" z-index: 2;">Sabado, 29 de junio, 2024.</p>
+        <p class="mt-0 size-font" style="z-index: 2;">02:30 p.m.</p>
 
         <hr class="hr-pink mb-4">
 
-        <div class="container">
+        <div class="container z-index: 2;">
           <div class="row">
             <div class="col text-center">
-              <div class="mb-2 mt-2">
-                <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51443261">
-                  <img src="mesa.png" alt="Mesa de Regalos" class="img-fluid" style="width: 8rem;">
+              <div class="mb-2 mt-2" >
+                <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51443261" target="_blank" style="z-index: 2;">
+                  <img src="mesa.png" alt="Mesa de Regalos" class="img-fluid icon-mesa">
                 </a>
-                <p class="m-0" style="font-size: 1.2rem">Mesa de Regalos</p>
+                <p class="m-0 size-font2">Mesa de Regalos</p>
               </div>
             </div>
             <div class="col-auto">
-              <div class="vertical-line"></div> <!-- Línea vertical -->
+              <div class="vertical-line"></div>
             </div>
             <div class="col text-center">
               <div class="mb-2 mt-2">
                 <a href="https://maps.app.goo.gl/cPzyBDM6KmLCdR7FA">
-                  <img src="ubicacion.png" alt="Ubicación" class="img-fluid" style="width: 8rem; height: 7.7rem;">
+                  <img src="ubicacion.png" alt="Ubicación" class="img-fluid icon-ubicacion" >
                 </a>
-                <p class="m-0" style="font-size: 1.2rem">Ubicación</p>
+                <p class="m-0 size-font2">Ubicación</p>
               </div>
             </div>
           </div>
         </div>
 
-        <hr class="hr-pink mt-4 mb-4">
+        <hr class="hr-pink mt-4 mb-2 z-index: 2;">
 
-        <p class="mb-0 pb-0" style="font-size: 2.5rem;">Faltan...</p>
-        
+        <p class="mb-0 pb-0 size-font" >Faltan...</p>
         
         <div class="countdown-container pt-0 pb-4">
           <div class="countdown-item">
-            <h1 id="days">XX</h1>
-            <p style="font-size: 1.2rem;" class="text-white">Días</p>
+            <h1 id="days">00</h1>
+            <p class="font-size-3" class="text-white">Días</p>
           </div>
           <div class="countdown-item">
-            <h1 id="hours">XX</h1>
-            <p style="font-size: 1.2rem;" class="text-white">Horas</p>
+            <h1 id="hours">00</h1>
+            <p class="font-size-3" class="text-white">Horas</p>
           </div>
           <div class="countdown-item">
-            <h1 id="minutes">XX</h1>
-            <p style="font-size: 1.2rem;" class="text-white">Minutos</p>
+            <h1 id="minutes">00</h1>
+            <p class="font-size-3" class="text-white">Minutos</p>
           </div>
         </div>
-
         
         <!-- Icono de flecha de regreso -->
         <div class="scroll-up-icon">
@@ -333,15 +381,16 @@ const countdown = setInterval(function() {
 }, 1000);
 
 document.addEventListener("DOMContentLoaded", function() {
-  const container = document.getElementById('iconContainer');
+  const container = document.getElementById('icons');
   const icons = ['icons/icon1.svg', 'icons/icon2.svg', 'icons/icon3.svg', 'icons/icon4.svg', 'icons/icon5.svg', 'icons/icon6.svg']; // Lista de rutas de los iconos
   const iconSize = 100; // Tamaño de los iconos
   const containerWidth = container.clientWidth;
   const containerHeight = container.clientHeight;
 
-  for (let i = 0; i < icons.length * 3; i++) { // Crear iconos
+  for (let i = 0; i < icons.length * 5; i++) { // Crear iconos
     const icon = document.createElement('img');
     icon.src = icons[i % icons.length]; // Ruta del icono (se repite cada 3 íconos)
+    icon.style.zIndex = "1";
     icon.className = 'icon'; // Asigna una clase común a todos los iconos
     let posX, posY;
     do {
@@ -362,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function isTooClose(x, y) {
   const icons = document.getElementsByClassName('icon');
-  const minDistance = 150; // Distancia mínima entre iconos
+  const minDistance = 250; // Distancia mínima entre iconos
   for (let i = 0; i < icons.length; i++) {
     const rect = icons[i].getBoundingClientRect();
     const distance = Math.sqrt(Math.pow(rect.left - x, 2) + Math.pow(rect.top - y, 2));
